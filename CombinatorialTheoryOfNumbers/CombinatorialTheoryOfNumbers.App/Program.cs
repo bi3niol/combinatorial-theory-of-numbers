@@ -20,7 +20,7 @@ namespace CombinatorialTheoryOfNumbers.App
             };
             List<LaunchConfig> configs = new List<LaunchConfig>()
             {
-                new LaunchConfig(k: 2, c: 4, l: 5)
+                new LaunchConfig(k: 3, c: 4, l: 30)
             };
             foreach (var P1 in P1s)
             {
@@ -31,6 +31,7 @@ namespace CombinatorialTheoryOfNumbers.App
                     {
                         game.Init(config);
                         var winner = game.Run();
+                        Console.WriteLine(winner);
                     }
                 }
             }
