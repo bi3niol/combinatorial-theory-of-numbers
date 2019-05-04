@@ -44,12 +44,12 @@ namespace CombinatorialTheoryOfNumbers.Lib
         public void NextTour(IPlayer1<int, int> P1, IPlayer2<int, int> P2)
         {
             int p1res = P1.Move(this);
-            this[p1res] = P2.Move(this, p1res);
+            int chosenColor = this[p1res] = P2.Move(this, p1res);
             var coloredNumbers = RoundResults
-                .Where(r => r.Player2Result == this[p1res])
+                .Where(r => r.Player2Result == chosenColor)
                 .Select(r => r.Player1Result)
                 .ToArray();
-            if (FindLengthOfLongestMonochromaticSequence(coloredNumbers) == TargetSeriesLength)
+            if (FindLengthOfLongestMonochromaticSequence(coloredNumbers) >= TargetSeriesLength)
             {
                 Winner = P1;
                 HasWinner = true;
