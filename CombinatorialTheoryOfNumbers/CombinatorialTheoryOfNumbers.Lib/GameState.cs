@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace CombinatorialTheoryOfNumbers.Lib
 {
@@ -45,7 +45,11 @@ namespace CombinatorialTheoryOfNumbers.Lib
         {
             int p1res = P1.Move(this);
             this[p1res] = P2.Move(this, p1res);
-            if (FindLengthOfLongestMonochromaticSequence() == TargetSeriesLength)
+            var coloredNumbers = RoundResults
+                .Where(r => r.Player2Result == this[p1res])
+                .Select(r => r.Player1Result)
+                .ToArray();
+            if (FindLengthOfLongestMonochromaticSequence(coloredNumbers) == TargetSeriesLength)
             {
                 Winner = P1;
                 HasWinner = true;
@@ -72,36 +76,32 @@ namespace CombinatorialTheoryOfNumbers.Lib
             Clear();
         }
 
-        private int FindLengthOfLongestMonochromaticSequence()
+        private int FindLengthOfLongestMonochromaticSequence(int[] coloredNumbers)
         {
-            if(_RoundResults.Count <= 2)
+            if(coloredNumbers.Length <= 2)
             {
-                return _RoundResults.Count;
+                return coloredNumbers.Length;
             }
-            int[] lengths = new int[_RoundResults.Count];
+            int max = 2;
+            int[] lengths = new int[coloredNumbers.Length];
             for(int i = 0; i < lengths.Length; i++)
             {
                 lengths[i] = 2;
             }
-            int max = 2;
             for(int i = lengths.Length - 2; i >= 0; i--)
             {
-                int left = i - 1, right = i + 1;
-                while (left >= 0 && right < lengths.Length)
+                int left = i - 1;
+                int right = i + 1;
+                while(left >= 0 && right < lengths.Length)
                 {
-                    int leftKey = _RoundResults.Keys[left], rightKey = _RoundResults.Keys[right],
-                        midKey = _RoundResults.Keys[i];
-                    if(leftKey + rightKey == 2 * midKey &&
-                        this[leftKey] == this[rightKey] && 
-                        this[leftKey] == this[midKey] &&
-                        this[midKey] != -1)
+                    if(coloredNumbers[left] + coloredNumbers[right] == 2 * coloredNumbers[i])
                     {
-                        lengths[i] = Math.Max(lengths[left], lengths[i] + 1);
-                        max = Math.Max(lengths[i], max);
+                        lengths[i] = Math.Max(lengths[right] + 1, lengths[i]);
+                        max = Math.Max(max, lengths[i]);
                         left--;
                         right++;
                     }
-                    else if(leftKey + rightKey < 2 * midKey)
+                    else if(coloredNumbers[left] + coloredNumbers[right] < 2 * coloredNumbers[i])
                     {
                         right++;
                     }

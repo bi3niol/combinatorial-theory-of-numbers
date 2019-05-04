@@ -20,7 +20,7 @@ namespace CombinatorialTheoryOfNumbers.App
             };
             List<LaunchConfig> configs = new List<LaunchConfig>()
             {
-                new LaunchConfig(k: 3, c: 4, l: 30)
+                new LaunchConfig(k: 3, c: 2, l: 6)
             };
             foreach (var P1 in P1s)
             {
