@@ -31,7 +31,7 @@ namespace CombinatorialTheoryOfNumbers.App
                     {
                         game.Init(config);
                         var winner = game.Run();
-                        Console.WriteLine(winner);
+                        Console.WriteLine(winner.GetType().Name + " won!");
                     }
                 }
             }
