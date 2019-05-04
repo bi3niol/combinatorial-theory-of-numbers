@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CombinatorialTheoryOfNumbers.Lib;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.Lib
+namespace CombinatorialTheoryOfNumbers.App
 {
     public class ColoredStatePresenter : IStatePresenter<int, int>
     {

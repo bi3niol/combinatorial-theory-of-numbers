@@ -12,11 +12,11 @@ namespace CombinatorialTheoryOfNumbers.App
             IStatePresenter<int, int> presenter = new ColoredStatePresenter();
             List<IPlayer1<int, int>> P1s = new List<IPlayer1<int, int>>
             {
-                new RandomPlayer1(2)
+                new RandomPlayer1(1)
             };
             List<IPlayer2<int, int>> P2s = new List<IPlayer2<int, int>>
             {
-                new RandomPlayer2(2)
+                new RandomPlayer2(1)
             };
             List<LaunchConfig> configs = new List<LaunchConfig>()
             {
