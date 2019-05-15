@@ -19,6 +19,7 @@ namespace CombinatorialTheoryOfNumbers.Lib
         int CurrentRound { get; }
         P2Res this[int i] { get; }
         IEnumerable<RoundResult<P1Res,P2Res>> RoundResults { get; }
+        SortedSet<int> GetColoredSubset(int color);
 
         bool HasWinner { get; }
         IPlayer Winner { get; }

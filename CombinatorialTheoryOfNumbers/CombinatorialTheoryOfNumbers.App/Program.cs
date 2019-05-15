@@ -1,4 +1,5 @@
 ﻿using CombinatorialTheoryOfNumbers.Lib;
+using CombinatorialTheoryOfNumbers.Lib.AdvancedStrategy;
 using CombinatorialTheoryOfNumbers.Lib.LinearStrategy;
 using CombinatorialTheoryOfNumbers.Lib.RandomStrategy;
 using System;
@@ -18,12 +19,13 @@ namespace CombinatorialTheoryOfNumbers.App
             };
             List<IPlayer2<int, int>> P2s = new List<IPlayer2<int, int>>
             {
-                new RandomPlayer2(100),
-                new LinearPlayer2()
+              //  new RandomPlayer2(100),
+              //  new LinearPlayer2(),
+                new AdvancedPlayer2()
             };
             List<LaunchConfig> configs = new List<LaunchConfig>()
             {
-                new LaunchConfig(k: 3, c: 2, l: 6)
+                new LaunchConfig(k: 6, c: 4, l: 30)
             };
             foreach (var P1 in P1s)
             {
