@@ -20,15 +20,14 @@ namespace CombinatorialTheoryOfNumbers.Lib.AdvancedStrategy
             {
                 if(gameState[i] == -1)
                 {
-                    int len = 0;
                     for (int c = 0; c < gameState.PossibleColors; c++)
                     {
                         var coloredNumbers = gameState.GetColoredSubset(c);
                         coloredNumbers.Add(i);
-                        len += Helpers.GetLengthOfLongestArithmeticSubsequence(coloredNumbers.ToList());
-                        if (len > maxLength)
+                        int length = Helpers.GetLengthOfLongestArithmeticSubsequence(coloredNumbers.ToList());
+                        if (length > maxLength)
                         {
-                            maxLength = len;
+                            maxLength = length;
                             chosenNumber = i;
                         }
                     }
