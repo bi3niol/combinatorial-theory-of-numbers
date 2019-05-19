@@ -1,9 +1,9 @@
-﻿using CombinatorialTheoryOfNumbers.Lib;
+﻿using CombinatorialTheoryOfNumbers.LibDotNet;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.App
+namespace CombinatorialTheoryOfNumbers.AppDotNet
 {
     public class ManualPlayer1 : IPlayer1<int, int>
     {

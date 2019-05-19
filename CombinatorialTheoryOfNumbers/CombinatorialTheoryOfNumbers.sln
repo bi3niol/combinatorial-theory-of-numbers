@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinatorialTheoryOfNumbers.App", "CombinatorialTheoryOfNumbers.App\CombinatorialTheoryOfNumbers.App.csproj", "{C8D77A0B-F43D-429C-B377-E5988B21BF19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinatorialTheoryOfNumbers.LibDotNet", "CombinatorialTheoryOfNumbers.LibDotNet\CombinatorialTheoryOfNumbers.LibDotNet.csproj", "{EB0C1940-6244-4CD5-B1C0-BCB3ABE350DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinatorialTheoryOfNumbers.Lib", "CombinatorialTheoryOfNumbers.Lib\CombinatorialTheoryOfNumbers.Lib.csproj", "{C394A647-2EFF-447D-9C5C-6374ADE0B100}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinatorialTheoryOfNumbers.AppDotNet", "CombinatorialTheoryOfNumbers.AppDotNet\CombinatorialTheoryOfNumbers.AppDotNet.csproj", "{11C97A62-473D-4C84-80D5-8030E9A69030}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C8D77A0B-F43D-429C-B377-E5988B21BF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8D77A0B-F43D-429C-B377-E5988B21BF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8D77A0B-F43D-429C-B377-E5988B21BF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8D77A0B-F43D-429C-B377-E5988B21BF19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C394A647-2EFF-447D-9C5C-6374ADE0B100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C394A647-2EFF-447D-9C5C-6374ADE0B100}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C394A647-2EFF-447D-9C5C-6374ADE0B100}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C394A647-2EFF-447D-9C5C-6374ADE0B100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0C1940-6244-4CD5-B1C0-BCB3ABE350DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0C1940-6244-4CD5-B1C0-BCB3ABE350DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0C1940-6244-4CD5-B1C0-BCB3ABE350DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0C1940-6244-4CD5-B1C0-BCB3ABE350DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C97A62-473D-4C84-80D5-8030E9A69030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C97A62-473D-4C84-80D5-8030E9A69030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C97A62-473D-4C84-80D5-8030E9A69030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C97A62-473D-4C84-80D5-8030E9A69030}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

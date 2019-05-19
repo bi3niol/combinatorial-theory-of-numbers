@@ -1,4 +1,4 @@
-﻿namespace CombinatorialTheoryOfNumbers.Lib
+﻿namespace CombinatorialTheoryOfNumbers.LibDotNet
 {
     public struct RoundResult<P1Res,P2Res>
     {

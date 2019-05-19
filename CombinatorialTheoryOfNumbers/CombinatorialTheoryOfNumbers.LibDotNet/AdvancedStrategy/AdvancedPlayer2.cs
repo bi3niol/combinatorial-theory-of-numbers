@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.Lib.AdvancedStrategy
+namespace CombinatorialTheoryOfNumbers.LibDotNet.AdvancedStrategy
 {
     public class AdvancedPlayer2 : IPlayer2<int, int>
     {

@@ -1,11 +1,11 @@
-﻿using CombinatorialTheoryOfNumbers.Lib;
-using CombinatorialTheoryOfNumbers.Lib.AdvancedStrategy;
-using CombinatorialTheoryOfNumbers.Lib.LinearStrategy;
-using CombinatorialTheoryOfNumbers.Lib.RandomStrategy;
+﻿using CombinatorialTheoryOfNumbers.LibDotNet;
+using CombinatorialTheoryOfNumbers.LibDotNet.AdvancedStrategy;
+using CombinatorialTheoryOfNumbers.LibDotNet.LinearStrategy;
+using CombinatorialTheoryOfNumbers.LibDotNet.RandomStrategy;
 using System;
 using System.Collections.Generic;
 
-namespace CombinatorialTheoryOfNumbers.App
+namespace CombinatorialTheoryOfNumbers.AppDotNet
 {
     class Program
     {

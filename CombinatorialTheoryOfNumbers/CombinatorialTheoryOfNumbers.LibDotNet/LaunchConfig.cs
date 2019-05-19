@@ -1,4 +1,4 @@
-﻿namespace CombinatorialTheoryOfNumbers.Lib
+﻿namespace CombinatorialTheoryOfNumbers.LibDotNet
 {
     public sealed class LaunchConfig
     {

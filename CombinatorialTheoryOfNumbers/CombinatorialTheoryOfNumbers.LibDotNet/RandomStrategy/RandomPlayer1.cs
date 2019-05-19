@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.Lib.RandomStrategy
+namespace CombinatorialTheoryOfNumbers.LibDotNet.RandomStrategy
 {
     public class RandomPlayer1 : IPlayer1<int, int>
     {

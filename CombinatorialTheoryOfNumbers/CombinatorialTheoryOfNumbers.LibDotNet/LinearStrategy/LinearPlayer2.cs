@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.Lib.LinearStrategy
+namespace CombinatorialTheoryOfNumbers.LibDotNet.LinearStrategy
 {
     public class LinearPlayer2 : IPlayer2<int, int>
     {

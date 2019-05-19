@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CombinatorialTheoryOfNumbers.Lib
+namespace CombinatorialTheoryOfNumbers.LibDotNet
 {
     public interface IGameState<P1Res, P2Res>
     {

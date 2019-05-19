@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CombinatorialTheoryOfNumbers.Lib
+namespace CombinatorialTheoryOfNumbers.LibDotNet
 {
     internal class GameState : IGameState<int, int>
     {

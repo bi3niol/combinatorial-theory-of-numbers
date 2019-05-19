@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.Lib
+namespace CombinatorialTheoryOfNumbers.LibDotNet
 {
     public interface IPlayer2<P1Res, P2Res>:IPlayer
     {

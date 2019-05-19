@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CombinatorialTheoryOfNumbers.Lib
+namespace CombinatorialTheoryOfNumbers.LibDotNet
 {
     public sealed class Game
     {
@@ -14,7 +14,7 @@ namespace CombinatorialTheoryOfNumbers.Lib
         {
             Player1 = player1;
             Player2 = player2;
-            GameState = new Lib.GameState();
+            GameState = new GameState();
             StatePresenter = presenter;
         }
 
