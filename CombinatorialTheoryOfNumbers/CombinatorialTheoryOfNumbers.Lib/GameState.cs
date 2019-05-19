@@ -39,11 +39,16 @@ namespace CombinatorialTheoryOfNumbers.Lib
 
         public IEnumerable<RoundResult<int, int>> RoundResults => _RoundResults.Values;
 
+        public IReadOnlyList<int> AvailableNumbers => _AvailableNumbers;
+
         public bool HasWinner { get; private set; }
 
         public IPlayer Winner { get; private set; }
 
         private SortedList<int, RoundResult<int, int>> _RoundResults { get; set; } = new SortedList<int, RoundResult<int, int>>();
+
+        private List<int> _AvailableNumbers { get; set; }
+
         private Dictionary<int, SortedSet<int>> _ColoredNumbers = new Dictionary<int, SortedSet<int>>();
 
         public SortedSet<int> GetColoredSubset(int color)
@@ -57,6 +62,8 @@ namespace CombinatorialTheoryOfNumbers.Lib
         {
             int p1res = P1.Move(this);
             int chosenColor = this[p1res] = P2.Move(this, p1res);
+            _AvailableNumbers.Remove(p1res);
+
             var coloredNumbers = GetColoredSubset(chosenColor);
             if (Helpers.GetLengthOfLongestArithmeticSubsequence(coloredNumbers.ToList()) >= TargetSeriesLength)
             {
@@ -77,6 +84,9 @@ namespace CombinatorialTheoryOfNumbers.Lib
             _RoundResults.Clear();
             foreach (var colored in _ColoredNumbers)
                 colored.Value.Clear();
+
+            _AvailableNumbers.Clear();
+            _AvailableNumbers.AddRange(Enumerable.Range(0, MaxGameLength));
         }
 
         public void Clear(LaunchConfig config)

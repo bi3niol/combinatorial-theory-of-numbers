@@ -20,7 +20,7 @@ namespace CombinatorialTheoryOfNumbers.Lib
         P2Res this[int i] { get; }
         IEnumerable<RoundResult<P1Res,P2Res>> RoundResults { get; }
         SortedSet<int> GetColoredSubset(int color);
-
+        IReadOnlyList<P1Res> AvailableNumbers { get; }
         bool HasWinner { get; }
         IPlayer Winner { get; }
         void NextTour(IPlayer1<P1Res, P2Res> P1, IPlayer2<P1Res, P2Res> P2);

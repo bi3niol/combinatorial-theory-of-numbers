@@ -21,7 +21,7 @@ namespace CombinatorialTheoryOfNumbers.Lib.RandomStrategy
 
         public int Move(IGameState<int, int> gameState, int player1Reuslt)
         {
-            return _rng.Next(gameState.PossibleColors);
+            return _rng.Next(gameState.PossibleColors-1);
         }
     }
 }
