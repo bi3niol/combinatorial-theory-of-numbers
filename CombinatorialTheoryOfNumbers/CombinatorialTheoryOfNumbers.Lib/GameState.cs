@@ -47,7 +47,7 @@ namespace CombinatorialTheoryOfNumbers.Lib
 
         private SortedList<int, RoundResult<int, int>> _RoundResults { get; set; } = new SortedList<int, RoundResult<int, int>>();
 
-        private List<int> _AvailableNumbers { get; set; }
+        private List<int> _AvailableNumbers { get; set; } = new List<int>();
 
         private Dictionary<int, SortedSet<int>> _ColoredNumbers = new Dictionary<int, SortedSet<int>>();
 

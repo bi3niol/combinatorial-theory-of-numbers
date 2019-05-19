@@ -15,7 +15,9 @@ namespace CombinatorialTheoryOfNumbers.App
             List<IPlayer1<int, int>> P1s = new List<IPlayer1<int, int>>
             {
                 new RandomPlayer1(10),
-                new LinearPlayer1()
+                new LinearPlayer1(),
+                new AdvancedPlayer1(),
+                new ManualPlayer1()
             };
             List<IPlayer2<int, int>> P2s = new List<IPlayer2<int, int>>
             {
