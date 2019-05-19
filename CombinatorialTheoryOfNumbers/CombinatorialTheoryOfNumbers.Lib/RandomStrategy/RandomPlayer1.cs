@@ -22,11 +22,9 @@ namespace CombinatorialTheoryOfNumbers.Lib.RandomStrategy
 
         public int Move(IGameState<int, int> gameState)
         {
-            int chosen = -1;
-            do
-            {
-                chosen = _rng.Next(gameState.MaxGameLength);
-            } while (gameState[chosen] != -1);
+            int index = _rng.Next(gameState.AvailableNumbers.Count-1);
+            int chosen = gameState.AvailableNumbers[index];
+
             return chosen;
         }
     }
