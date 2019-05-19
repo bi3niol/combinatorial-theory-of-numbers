@@ -16,20 +16,17 @@ namespace CombinatorialTheoryOfNumbers.Lib.AdvancedStrategy
         public int Move(IGameState<int, int> gameState)
         {
             int maxLength = 0, chosenNumber = 0;
-            for(int i = 0; i < gameState.MaxGameLength && i < gameState.TargetSeriesLength * (_maxChosen + 1); i++)
+            foreach(var num in gameState.AvailableNumbers)
             {
-                if(gameState[i] == -1)
+                for (int c = 0; c < gameState.PossibleColors; c++)
                 {
-                    for (int c = 0; c < gameState.PossibleColors; c++)
+                    var coloredNumbers = gameState.GetColoredSubset(c);
+                    coloredNumbers.Add(num);
+                    int length = Helpers.GetLengthOfLongestArithmeticSubsequence(coloredNumbers.ToList());
+                    if (length > maxLength)
                     {
-                        var coloredNumbers = gameState.GetColoredSubset(c);
-                        coloredNumbers.Add(i);
-                        int length = Helpers.GetLengthOfLongestArithmeticSubsequence(coloredNumbers.ToList());
-                        if (length > maxLength)
-                        {
-                            maxLength = length;
-                            chosenNumber = i;
-                        }
+                        maxLength = length;
+                        chosenNumber = num;
                     }
                 }
             }
