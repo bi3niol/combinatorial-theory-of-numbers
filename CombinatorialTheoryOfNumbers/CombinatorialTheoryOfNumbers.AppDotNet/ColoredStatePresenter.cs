@@ -7,7 +7,7 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
 {
     public class ColoredStatePresenter : IStatePresenter<int, int>
     {
-        private readonly ConsoleColor[] ForegroundColors = new ConsoleColor[]
+        public static readonly ConsoleColor[] ForegroundColors = new ConsoleColor[]
         {
             ConsoleColor.Red,
             ConsoleColor.Blue,

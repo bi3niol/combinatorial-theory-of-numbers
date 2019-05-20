@@ -1,0 +1,11 @@
+[
+{"Player1":{"Type":"Linear","Seed":0},"Player2":{"Type":"Linear","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Linear","Seed":0},"Player2":{"Type":"Advanced","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Linear","Seed":0},"Player2":{"Type":"Random","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Advanced","Seed":0},"Player2":{"Type":"Linear","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Advanced","Seed":0},"Player2":{"Type":"Advanced","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Advanced","Seed":0},"Player2":{"Type":"Random","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Random","Seed":0},"Player2":{"Type":"Linear","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Random","Seed":0},"Player2":{"Type":"Advanced","Seed":0},"K":6,"C":4,"L":30},
+{"Player1":{"Type":"Random","Seed":0},"Player2":{"Type":"Random","Seed":0},"K":6,"C":4,"L":30}
+]
