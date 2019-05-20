@@ -19,7 +19,10 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
 
             if(args.Length > 0)
             {
+                string targetFile = "";
                 List<Test> testList;
+                TextWriter originalWriter = Console.Out;
+                StreamWriter streamWriter = null;
                 Console.WriteLine($"Loading JSON input from file {args[0]}...");
                 try
                 {
@@ -32,49 +35,21 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
                 }
                 Console.WriteLine($"Successfully loaded {testList.Count} test(s) from file.");
 
-                if(args.Length == 1)
+                if(args.Length == 2)
                 {
-                    IStatePresenter<int, int> pres1 = new ColoredStatePresenter();
-                    IStatePresenter<int, int> pres2 = new LongStatePresenter();
-                    for (int i = 0; i < testList.Count; i ++)
-                    {
-                        Test test = testList[i];
-                        IPlayer1<int,int> P1 = test.GetPlayer1();
-                        IPlayer2<int, int> P2 = test.GetPlayer2();
-                        if (P1 == null || P2 == null)
-                        {
-                            Console.WriteLine($"Failed to execute test {i} - incorrect player type(s).");
-                            continue;
-                        }
-                        Console.WriteLine($"Test {i}: {P1.GetType().Name} vs {P2.GetType().Name}");
-                        IStatePresenter<int, int> pres = pres1;
-                        if (test.C >= ColoredStatePresenter.ForegroundColors.Length)
-                        {
-                            pres = pres2;
-                        }
-                         var winner = test.Run(pres);
-                        Console.WriteLine(winner.GetType().Name + " won!");
-                    }
+                    targetFile = args[1];
+
+                    streamWriter = new StreamWriter(targetFile);
+                    Console.SetOut(streamWriter);
                 }
-                else
+                for(int i = 0; i < testList.Count; i ++)
                 {
-                    Console.WriteLine($"Will be writing to the file {args[1]}.");
-                    FileStatePresenter pres = new FileStatePresenter(args[1]);
-                    for (int i = 0; i < testList.Count; i++)
-                    {
-                        Test test = testList[i];
-                        var P1 = test.GetPlayer1();
-                        var P2 = test.GetPlayer2();
-                        if (P1 == null || P2 == null)
-                        {
-                            pres.WriteString($"Failed to execute test {i} - incorrect player type(s).");
-                            continue;
-                        }
-                        pres.WriteString($"Test {i}: {P1.GetType().Name} vs {P2.GetType().Name}");
-                        var winner = test.Run(pres);
-                        pres.WriteString(winner.GetType().Name + " won!");
-                    }
-                    pres.Close();
+                    testList[i].Run(i+1);
+                }
+                if(targetFile != "")
+                {
+                    Console.SetOut(originalWriter);
+                    streamWriter.Close();
                 }
                 Console.WriteLine("Done.");
                 Console.WriteLine("Press any key to quit.");
@@ -125,27 +100,20 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
                 return;
             }
 
-            IStatePresenter<int, int> presenter;
+            string presenter;
             if (c > ColoredStatePresenter.ForegroundColors.Length)
             {
-                presenter = new LongStatePresenter();
+                presenter = "long";
             }
             else
             {
-                presenter = new ColoredStatePresenter();
+                presenter = "colored";
             }
-            Test quickTest = new Test(P1type, seed1, P2type, seed2, k, c, l);
-            var quickWinner = quickTest.Run(presenter);
-            if(quickWinner == null)
-            {
-                Console.WriteLine("Failed to execute test - wrong player types.");
-            }
-            else
-            {
-                Console.WriteLine(quickWinner.GetType().Name + " won!");
-            }
+            Test quickTest = new Test(presenter, P1type, seed1, P2type, seed2, k, c, l, 1);
+            quickTest.Run();
             Console.WriteLine("Press any key to quit.");
             Console.ReadKey(true);
+            return;
         }
     }
 }

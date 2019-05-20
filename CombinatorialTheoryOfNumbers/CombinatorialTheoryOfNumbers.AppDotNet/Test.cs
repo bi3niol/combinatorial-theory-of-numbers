@@ -25,34 +25,43 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
 
     public class Test
     {
+        public string Presenter { get; }
         public TestPlayer Player1 { get; }
         public TestPlayer Player2 { get; }
         public int K { get; }
         public int C { get; }
         public int L { get; }
+        public int Iterations { get; }
 
         [JsonConstructor]
-        public Test(TestPlayer player1, TestPlayer player2, int k, int c, int l)
+        public Test(string presenter, TestPlayer player1, TestPlayer player2, int k, int c, int l, int iterations)
         {
+            Presenter = presenter;
             Player1 = player1;
             Player2 = player2;
             K = k;
             C = c;
             L = l;
+            Iterations = iterations;
         }
 
-        public Test(string player1Type, int player1Seed, string player2Type, int player2Seed, int k, int c, int l)
+        public Test(string presenter, string player1Type, int player1Seed, string player2Type, int player2Seed, int k, int c, int l, int iterations)
         {
+            Presenter = presenter;
             Player1 = new TestPlayer(player1Type, player1Seed);
             Player2 = new TestPlayer(player2Type, player2Seed);
             K = k;
             C = c;
             L = l;
+            Iterations = iterations;
         }
 
-        public Test(string player1Type, string player2Type, int k, int c, int l) : this(player1Type, 0, player2Type, 0, k, c, l) { }
-        public Test(string player1Type, int player1Seed, string player2Type, int k, int c, int l) : this(player1Type, player1Seed, player2Type, 0, k, c, l) { }
-        public Test(string player1Type, string player2Type, int player2Seed, int k, int c, int l) : this(player1Type, 0, player2Type, player2Seed, k, c, l) { }
+        public Test(string presenter, string player1Type, string player2Type, int k, int c, int l, int iterations)
+            : this(presenter, player1Type, 0, player2Type, 0, k, c, l, iterations) { }
+        public Test(string presenter, string player1Type, int player1Seed, string player2Type, int k, int c, int l, int iterations)
+            : this(presenter, player1Type, player1Seed, player2Type, 0, k, c, l, iterations) { }
+        public Test(string presenter, string player1Type, string player2Type, int player2Seed, int k, int c, int l, int iterations)
+            : this(presenter, player1Type, 0, player2Type, player2Seed, k, c, l, iterations) { }
 
         public IPlayer1<int, int> GetPlayer1()
         {
@@ -78,17 +87,60 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
             }
         }
 
-        public IPlayer Run(IStatePresenter<int, int> presenter)
+        public IStatePresenter<int, int> GetStatePresenter()
+        {
+            switch (Presenter.ToLower())
+            {
+                case "colored": return new ColoredStatePresenter();
+                case "long": return new LongStatePresenter();
+            }
+            return new EmptyStatePresenter();
+        }
+
+        public void Run(int testNo)
         {
             IPlayer1<int, int> P1 = GetPlayer1();
             IPlayer2<int, int> P2 = GetPlayer2();
+            IStatePresenter<int, int> Pres = GetStatePresenter();
 
-            if (P1 == null || P2 == null)
-                return null;
+            if (P1 == null || P2 == null || Pres == null || Player1.Type == "manual" || Player2.Type == "manual")
+            {
+                for (int it = 0; it < Iterations; it++)
+                {
+                    Console.WriteLine($"{testNo} - Invalid test");
+                }
+                return;
+            }
 
-            Game game = new Game(P1, P2, presenter);
+            Game game = new Game(P1, P2, Pres);
+            LaunchConfig config = new LaunchConfig(K, C, L);
+            for (int it = 0; it < Iterations; it++)
+            {
+                game.Init(config);
+                IPlayer result = game.Run();
+                Console.Write($"{testNo}, {Player1.Type}, {Player1.Seed}, {Player2.Type}, {Player2.Seed}, {K}, {C}, {L}, {result.GetType().Name}\n");
+            }
+        }
+
+        public void Run()
+        {
+            IPlayer1<int, int> P1 = GetPlayer1();
+            IPlayer2<int, int> P2 = GetPlayer2();
+            IStatePresenter<int, int> Pres = GetStatePresenter();
+
+            if (P1 == null || P2 == null || Pres == null)
+            {
+                for (int it = 0; it < Iterations; it++)
+                {
+                    Console.WriteLine($"Invalid arguments - cannot execute the test.");
+                }
+                return;
+            }
+
+            Game game = new Game(P1, P2, Pres);
             game.Init(new LaunchConfig(K, C, L));
-            return game.Run();
+            var winner = game.Run();
+            Console.WriteLine(winner.GetType().Name + " won!");
         }
     }
 }

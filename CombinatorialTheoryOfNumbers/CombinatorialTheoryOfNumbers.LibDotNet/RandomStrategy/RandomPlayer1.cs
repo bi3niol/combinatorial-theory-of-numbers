@@ -12,12 +12,13 @@ namespace CombinatorialTheoryOfNumbers.LibDotNet.RandomStrategy
         public RandomPlayer1(int randomSeed)
         {
             _randomSeed = randomSeed;
+            _rng = new Random(_randomSeed);
             Clear();
         }
 
         public void Clear()
         {
-            _rng = new Random(_randomSeed);
+            
         }
 
         public int Move(IGameState<int, int> gameState)

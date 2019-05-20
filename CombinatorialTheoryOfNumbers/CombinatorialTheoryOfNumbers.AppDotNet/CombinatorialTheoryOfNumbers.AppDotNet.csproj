@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColoredStatePresenter.cs" />
-    <Compile Include="FileStatePresenter.cs" />
+    <Compile Include="EmptyStatePresenter.cs" />
     <Compile Include="LongStatePresenter.cs" />
     <Compile Include="ManualPlayer1.cs" />
     <Compile Include="ManualPlayer2.cs" />
