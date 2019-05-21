@@ -19,10 +19,8 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
 
             if(args.Length > 0)
             {
-                string targetFile = "";
+                string targetFile = "test_res.csv";
                 List<Test> testList;
-                TextWriter originalWriter = Console.Out;
-                StreamWriter streamWriter = null;
                 Console.WriteLine($"Loading JSON input from file {args[0]}...");
                 try
                 {
@@ -38,19 +36,13 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
                 if(args.Length == 2)
                 {
                     targetFile = args[1];
-
-                    streamWriter = new StreamWriter(targetFile);
-                    Console.SetOut(streamWriter);
                 }
+                StringWriter writer = new StringWriter();
                 for(int i = 0; i < testList.Count; i ++)
                 {
-                    testList[i].Run(i+1);
+                    testList[i].Run(i+1, writer);
                 }
-                if(targetFile != "")
-                {
-                    Console.SetOut(originalWriter);
-                    streamWriter.Close();
-                }
+                File.WriteAllText(targetFile,writer.ToString());
                 Console.WriteLine("Done.");
                 Console.WriteLine("Press any key to quit.");
                 Console.ReadKey(true);

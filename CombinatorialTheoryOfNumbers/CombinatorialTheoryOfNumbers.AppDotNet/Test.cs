@@ -5,6 +5,7 @@ using CombinatorialTheoryOfNumbers.LibDotNet.RandomStrategy;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace CombinatorialTheoryOfNumbers.AppDotNet
 {
@@ -97,7 +98,7 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
             return new EmptyStatePresenter();
         }
 
-        public void Run(int testNo)
+        public void Run(int testNo, TextWriter textWriter)
         {
             IPlayer1<int, int> P1 = GetPlayer1();
             IPlayer2<int, int> P2 = GetPlayer2();
@@ -118,7 +119,9 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
             {
                 game.Init(config);
                 IPlayer result = game.Run();
-                Console.Write($"{testNo}, {Player1.Type}, {Player1.Seed}, {Player2.Type}, {Player2.Seed}, {K}, {C}, {L}, {result.GetType().Name}\n");
+                var msg = $"{testNo}, {Player1.Type}, {Player1.Seed}, {Player2.Type}, {Player2.Seed}, {K}, {C}, {L}, {result.GetType().Name}\n";
+                textWriter.Write(msg);
+                Console.Write(msg);
             }
         }
 
