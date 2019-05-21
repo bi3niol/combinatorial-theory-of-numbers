@@ -23,7 +23,7 @@ namespace CombinatorialTheoryOfNumbers.LibDotNet.RandomStrategy
 
         public int Move(IGameState<int, int> gameState)
         {
-            int index = _rng.Next(gameState.AvailableNumbers.Count-1);
+            int index = _rng.Next(gameState.AvailableNumbers.Count);
             int chosen = gameState.AvailableNumbers[index];
 
             return chosen;
