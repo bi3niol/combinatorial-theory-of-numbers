@@ -44,8 +44,6 @@ namespace CombinatorialTheoryOfNumbers.AppDotNet
                 }
                 File.WriteAllText(targetFile,writer.ToString());
                 Console.WriteLine("Done.");
-                Console.WriteLine("Press any key to quit.");
-                Console.ReadKey(true);
                 return;
             }
 
