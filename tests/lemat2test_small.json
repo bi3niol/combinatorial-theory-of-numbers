@@ -1,0 +1,245 @@
+[
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 50 },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 59 },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 69 },
+    "Player2": { "Type": "Linear" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 50 },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 59 },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 69 },
+    "Player2": { "Type": "Random" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Linear" },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Advanced" },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 50 },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 11,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 59 },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 12,
+    "Iterations": 20
+  },
+  {
+    "Presenter": "empty",
+    "Player1": { "Type": "Random", "Seed": 69 },
+    "Player2": { "Type": "Advanced" },
+    "K": 4,
+    "C": 4,
+    "L": 13,
+    "Iterations": 20
+  }
+]

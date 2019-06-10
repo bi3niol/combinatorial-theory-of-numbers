@@ -7,6 +7,8 @@ namespace CombinatorialTheoryOfNumbers.LibDotNet.AdvancedStrategy
 {
     public class AdvancedPlayer2 : IPlayer2<int, int>
     {
+        Dictionary<int, List<int>> helperDict = new Dictionary<int, List<int>>();
+        static Random random = new Random();
         public void Clear()
         {
             //does nothing
@@ -14,20 +16,26 @@ namespace CombinatorialTheoryOfNumbers.LibDotNet.AdvancedStrategy
 
         public int Move(IGameState<int, int> gameState, int player1Reuslt)
         {
-            int minColor = 0;
-            int minLength = int.MaxValue;
+            int maxLength = int.MinValue;
+            helperDict.Clear();
+
             for (int c = 0; c < gameState.PossibleColors; c++)
             {
                 var coloredNumbers = gameState.GetColoredSubset(c);
                 coloredNumbers.Add(player1Reuslt);
                 int length = Helpers.GetLengthOfLongestArithmeticSubsequence(coloredNumbers.ToList());
-                if (length < minLength)
-                {
-                    minLength = length;
-                    minColor = c;
-                }
+                if (length > maxLength)
+                    maxLength = length;
+
+                if (helperDict.ContainsKey(length))
+                    helperDict[length].Add(c);
+                else
+                    helperDict.Add(length, new List<int> { c });
             }
-            return minColor;
+
+            var res = helperDict.Where(kp => kp.Key != maxLength).SelectMany(kp => kp.Value).ToArray();
+
+            return res[random.Next(res.Length)];
         }
     }
 }
