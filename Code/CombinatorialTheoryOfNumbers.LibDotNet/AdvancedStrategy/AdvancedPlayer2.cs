@@ -35,6 +35,9 @@ namespace CombinatorialTheoryOfNumbers.LibDotNet.AdvancedStrategy
 
             var res = helperDict.Where(kp => kp.Key != maxLength).SelectMany(kp => kp.Value).ToArray();
 
+            if (res.Length == 0)
+                res = helperDict.SelectMany(kp => kp.Value).ToArray();
+
             return res[random.Next(res.Length)];
         }
     }
